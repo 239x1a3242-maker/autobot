@@ -1,54 +1,54 @@
 # Core runtime
-transformers>=4.46.0
-torch>=2.2.0
-accelerate>=0.30.0
-pyyaml>=6.0.1
-python-dotenv>=1.0.1
-requests>=2.31.0
-pydantic>=2.5.0
-langchain>=0.3.0
-langchain-core>=0.3.0
-langchain-community>=0.3.0
-langchain-text-splitters>=0.3.0
-langgraph>=0.2.0
-langchain-experimental>=0.3.0
-langchain-guardrails>=0.0.1
-langchain-tools>=0.0.1
-rank-bm25>=0.2.2
-pypdf>=5.0.0
+transformers
+torch
+accelerate
+pyyaml
+python-dotenv
+requests
+pydantic
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langgraph
+langchain-experimental
+langchain-guardrails
+langchain-tools
+rank-bm25
+pypdf
 
 # Memory and retrieval
-chromadb>=0.5.5
-faiss-cpu>=1.8.0
-sentence-transformers>=3.0.1
-numpy>=1.26.0
+chromadb
+faiss-cpu
+sentence-transformers
+numpy
 
 # Web-search toolchain
-beautifulsoup4>=4.12.0
-lxml>=4.9.0
-ddgs>=9.0.0
-duckduckgo-search>=6.2.0
-trafilatura>=1.9.0
-justext>=3.0.1
-boilerpy3>=1.0.7
-rich>=13.7.0
+beautifulsoup4
+lxml
+ddgs
+duckduckgo-search
+trafilatura
+justext
+boilerpy3
+rich
 
 # Ingestion and document processing
-pandas>=2.2.0
-tqdm>=4.66.0
-langdetect>=1.0.9
-nltk>=3.8.1
-pdfplumber>=0.11.0
-python-docx>=1.1.2
-scikit-learn>=1.5.0
-tree-sitter>=0.22.3
-tree-sitter-languages>=1.10.2
+pandas
+tqdm
+langdetect
+nltk
+pdfplumber
+python-docx
+scikit-learn
+tree-sitter
+#textual-tree-sitter-languages
 
 # Voice interface (optional but recommended)
-pyttsx3>=2.98
-SpeechRecognition>=3.10.0
-pyaudio>=0.2.14
+pyttsx3
+SpeechRecognition
+pyaudio
 
 # API/integration utilities
-fastapi>=0.115.0
-asyncio-mqtt>=0.13.0
+fastapi
+asyncio-mqtt

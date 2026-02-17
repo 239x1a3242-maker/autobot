@@ -1,32 +1,31 @@
-# AutoBot (Agentic Multi-Flow Orchestrator)
+# AutoBot (Single Tool-Use Orchestrator)
 
-AutoBot is a local-first assistant that routes each user request through a **meta-controller** and then executes one of five agentic flows:
+AutoBot is a local-first assistant that executes a single agentic flow:
 
 1. `tool_use`
-2. `react`
-3. `planning`
-4. `multi_agent`
-5. `pev` (Planner -> Executor -> Verifier)
 
-The orchestrator also supports:
+Removed runtime flows:
+- `react`
+- `planning`
+- `multi_agent`
+- `pev`
 
-- 3 specialized local model lanes (`autobot_instruct`, `autobot_thinking`, `autobot_rag`)
+The orchestrator supports:
+
+- 2 local model lanes (`autobot_instruct`, `autobot_rag`)
 - Tool integrations (`web_search`, `send_email`)
 - Long-term + episodic + semantic memory
-- Debug traces (chosen specialist, chosen flow, chosen models)
-- Automatic replanning on flow failure
+- Debug traces (tool decisions, retries, failures)
+- Retry with log-aware recovery (max 3 attempts)
 
-## What Was Added
+Note:
+- This repository now runs a strict single-agent tool-use path only.
+- Some lower sections in this README may still contain historical architecture notes.
 
-This implementation now includes a **Meta-Controller layer** inspired by `arc-files/11_meta_controller.ipynb`.
+## Runtime Note
 
-The meta-controller:
-
-- analyzes each request,
-- chooses a specialist lane (`generalist`, `researcher`, `coder`, `summarizer`, `analyst`, `planner`, `retriever`, `compliance_checker`, `optimizer`, `explainer`),
-- suggests a preferred flow,
-- influences tool requirements and RAG usage,
-- writes route decisions into debug trace.
+Runtime is now strict single-agent `tool_use` only.
+Legacy sections below may still describe historical flows and should be treated as reference only.
 
 ## LangChain Optimization Layer
 
