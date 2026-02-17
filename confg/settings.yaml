@@ -8,11 +8,11 @@ llm:
     local_path: "./models/autobot-instruct"
     max_tokens: 2048
     temperature: 0.3
-  reasoning_model:
-    name: "autobot-thinking"
-    local_path: "./models/autobot-thinking"
+  rag_model:
+    name: "autobot-rag"
+    local_path: "./models/autobot-rag"
     max_tokens: 2048
-    temperature: 0.7
+    temperature: 0.3
 
 memory:
   short_term_limit: 100
@@ -42,18 +42,17 @@ debug:
   enabled: true
 
 agentic:
-  react_max_iterations: 4
-  pev_max_attempts: 3
+  tool_use_max_steps: 4
   max_context_length: 32768
   max_tokens_hard_limit: 4096
-  meta_controller:
-    enabled: true
-    temperature: 0.1
-    max_tokens: 320
   langchain:
     enabled: true
     use_bm25_rerank: true
     use_local_doc_loader: true
-    use_langgraph_multi_agent: true
     chunk_size: 900
     chunk_overlap: 120
+    local_doc_max_files: 10
+    local_doc_max_chunks: 8
+    local_doc_max_chars: 7000
+    local_documents:
+      - "./local"
